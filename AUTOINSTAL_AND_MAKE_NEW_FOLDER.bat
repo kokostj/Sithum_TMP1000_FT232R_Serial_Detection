@@ -25,16 +25,22 @@ del "C:\METRUM2\setup_ftprog.zip"
 :: start to run the .exe file with silent installation
 "C:\METRUM2\FT_Prog_v3.12.31.639 Installer.exe" /S /norestart
 
+
+
 :: The .exe file is deleted
 REM del "C:\METRUM2\FT_Prog_v3.12.31.639 Installer.exe"
 
-:: To copy the FT232R.xml file to the FT_prog software path
+::The template file is copied to the ftprog software location
 xcopy /y "%batpath%\FT232R.xml" "C:\Program Files (x86)\FTDI\FT_Prog\Templates"
 
 :: Programming the ft232 chip
 FT_Prog-CmdLine.exe scan prog 0 Templates\FT232R.xml cycl 0   
+
+ 
+
 :: The template file (.xml) is generated such that the device description will be "FT232R"
 pause
+
 REM setlocal
 REM setlocal enabledelayedexpansion
 REM for /f "usebackq tokens=3*" %%a in ('reg query "HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\FTDI\FT_prog\DC\InstallPath" /s') do (
