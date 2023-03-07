@@ -1,0 +1,2 @@
+# Sithum_TMP1000_FT232R_Serial_Detection
+RUN THE AUTO_INSTALLATION_COMPLETED.bat file
