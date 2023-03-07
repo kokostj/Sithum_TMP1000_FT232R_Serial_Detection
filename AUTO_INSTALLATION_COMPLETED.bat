@@ -102,9 +102,9 @@ if exist "C:\Program Files (x86)\" (
 :: Programming the ft232 chip
 :: The template file (.xml) is generated such that the device description will be "FT232R"
 FT_Prog-CmdLine.exe scan prog 0 Templates\FT232R.xml cycl 0 
-pause 
+
 
 IF ERRORLEVEL 1 (
-echo "Please connect the thermometer with the USB port of the Computer and press ENTER"
+echo Please connect the thermometer with the USB port of the Computer and press ENTER
 pause >nul
 goto loop4)
